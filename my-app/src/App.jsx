@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import './App.css'
+import Navbar from './Navbar'
 
 function App() {
 
 
   return (
     <> 
-    <div>Hello G G </div>
+      <Navbar />
+      <div className="pt-5"> {/* padding so content not hidden */}
+        <h1 className="text-2xl">Welcome</h1>
+      </div>
     </>
   )
 }
