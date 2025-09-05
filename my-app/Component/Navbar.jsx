@@ -23,13 +23,13 @@ export default function Navbar() {
       {/* right side */}
       <ul className="w-full flex justify-center items-center gap-4">
         {/* search box */}
-        <li className="font-['Lato'] flex justify-center items-center gap-2 py-1 px-3 bg-blue-50 rounded-lg shadow-md">
+        <li className="font-['Lato'] flex justify-center items-center gap-2 py-2 px-6 bg-blue-50 rounded-lg shadow-md">
           <input
             className="outline-none bg-transparent"
             type="text"
             placeholder="Search"
           />
-          {/* search icon */}
+          {/* search icon */} 
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -59,7 +59,7 @@ export default function Navbar() {
 
         {/* Basket Icon */}
         <li>
-          <a className="relative" href="/basket">
+          <a className="relative " href="/basket">
             <svg
               stroke="currentColor"
               fill="currentColor"
