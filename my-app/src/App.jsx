@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from '../Component/Navbar'
 import Hero from '../Component/Hero'
+import Products from '../Component/Products'
 
 function App() {
 
@@ -9,9 +10,11 @@ function App() {
   return (
     <> 
       <Navbar />
-      <div className="pt-5"> {/* padding so content not hidden */}
+      <div className=""> {/* padding so content not hidden */}
         <Hero />
-        <h1 className="text-2xl">Welcome</h1>
+        
+      <Products />
+
       </div>
     </>
   )
