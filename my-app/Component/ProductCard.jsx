@@ -24,10 +24,8 @@ export  default function ProductCard({product}) {
             </p>"
             
               <StarRating rating={product.rating.rate} />
-              
-        </div>
+                      </  div>
       </div>
-
- </div>
+</div>
     )
 }
