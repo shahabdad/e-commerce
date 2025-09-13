@@ -1,7 +1,7 @@
 import React from "react";
 import  StarRating from "./StarRating"
 
-export  default function ProductCard({product}) { 
+export  default function ProductCard({product, onAddToCart}) { 
 
     return (
  <div className="shadowp-xl   rounded-2xl hover:scale-105 duration-700 group bg-white" >    
@@ -18,6 +18,7 @@ export  default function ProductCard({product}) {
             {product.title}
 
         </h2>
+
         <div className="flex justify-around items-center" >
             <p className="text-zinc-800 text-xl font-bold font-['Lato'] leading-relaxed"> 
                 ${product.price}
@@ -25,7 +26,14 @@ export  default function ProductCard({product}) {
             
               <StarRating rating={product.rating.rate} />
                       </  div>
+
       </div>
+         <button
+        onClick={onAddToCart}
+        className="mt-3 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
+      >
+        Add to Cart
+      </button>
 </div>
     )
 }

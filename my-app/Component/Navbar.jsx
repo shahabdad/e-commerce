@@ -92,6 +92,9 @@ export default function Navbar({cartCount}) {
             </span> */}
           {cartCount > 0 && ( 
             <span className="w-5 h-5 flex font-semibold items-center justify-center text-white text-xs -top-2  -right-2   bg-rose-500  absolute  "
+          >
+            {cartCount}
+          </span>
           )
 
           }
@@ -100,4 +103,5 @@ export default function Navbar({cartCount}) {
       </ul>
     </nav>
   );
+  
 }

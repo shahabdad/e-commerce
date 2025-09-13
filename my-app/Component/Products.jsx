@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 
- export default function Products()  { 
+ export default function Products({onAddToCart})  { 
     const  [product,setProducts] = useState([]); 
      const [sortType,setSortType]  = useState("default"); 
 
@@ -37,7 +37,10 @@ import ProductCard from "./ProductCard";
                 </div>
                 <div  className="w-full grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4  gap-5 px-5 lg:px-[100px] py-[50px]">
                     {sortedProducts.map((product) => (
-                        <ProductCard key={product.id} product={product} />
+                        <ProductCard key={product.id} 
+                        product={product}
+                        onAddToCart={onAddToCart}
+                        />
                     ))} 
 
                 </div>
