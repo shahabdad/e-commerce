@@ -1,18 +1,13 @@
 import { FaShoppingBag } from "react-icons/fa";
 export default function Navbar({cartCount}) {
   return (
-    <nav className="w-full flex justify-around items-center text-gray-700 text-lg font-bold py-2 bg-[#ffffff29] fixed top-0 left-0 z-10 backdrop-blur-3xl">
+    <nav className="w-full flex pb-7  justify-around items-center text-gray-700 text-lg font-bold py-2 bg-[#ffffff29] fixed top-0 left-0 z-10 backdrop-blur-3xl">
       {/* left side */}
       <ul className="w-full flex  justify-between items-center gap-4">
         <li className="px-13 ">
              
 
-          {/* <a href="/" className="flex items-center gap-2">
-  <h1 className="text-5xl  ml-49 font-bold">
-    <span className="text-black">Re</span>
-    <span className="text-orange-500">piit</span>
-  </h1>
-</a> */}
+    
    <a href="/" className="flex items-center gap-2 group">
         <h1 className="text-5xl font-bold   ml-49  flex items-center">
           <span className="text-black group-hover:text-orange-500 transition-colors duration-300">
