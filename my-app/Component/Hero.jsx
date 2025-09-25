@@ -1,5 +1,5 @@
 import React from "react";
-import { ShoppingBag } from "lucide-react"; // npm i lucide-react
+import { ShoppingBag } from "lucide-react";
 
 export default function Hero() {
   return (

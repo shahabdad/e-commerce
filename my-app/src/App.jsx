@@ -1,53 +1,40 @@
-// import { useState } from 'react'
-// import './App.css'
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Navbar from '../Component/Navbar'
-// import Hero from '../Component/Hero'
-// import Products from '../Component/Products'
-
-// function App() {
-// const [cartCount, setCartCount]  = useState(0); 
-// const  handleAddToCart   = () =>  { 
-//   setCartCount((prev) => prev + 1); 
-// }
-//   return (
-//     <> 
-//       <Navbar    cartCount={cartCount }/>
-//       <div className=""> {/* padding so content not hidden */}
-//         <Hero     />
-        
-//       <Products  />
-
-//       </div>
-//     </>
-//   )
-// }
-
-// export default App
-
-
 import { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../Component/Navbar";
 import Hero from "../Component/Hero";
 import Products from "../Component/Products";
-import ProductDetail from "../Component/ProductDetail"; // 👈 new import
+import ProductDetail from "../Component/ProductDetail";
+import Basket from "../Component/Basket";
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
 
-  const handleAddToCart = () => {
-    setCartCount((prev) => prev + 1);
+  // ✅ pass product as parameter
+  const handleAddToCart = (product) => {
+    setCartItems((prev) => {
+      const exists = prev.find((item) => item.id === product.id);
+      if (exists) {
+        return prev.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + product.quantity }
+            : item
+        );
+      } else {
+        return [...prev, { ...product, quantity: product.quantity }];
+      }
+    });
   };
 
   return (
     <Router>
-      <Navbar cartCount={cartCount} />
+      
+      <Navbar
+        cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+      />
       <div className="pt-16">
-        {/* 👇 Define routes */}
         <Routes>
-          {/* Home page with Hero + Products */}
+  
           <Route
             path="/"
             element={
@@ -58,8 +45,18 @@ function App() {
             }
           />
 
-          {/* Single product detail page */}
-          <Route path="/product/:id" element={<ProductDetail />} />
+
+          <Route
+            path="/product/:id"
+            element={<ProductDetail onAddToCart={handleAddToCart} />}
+          />
+
+        
+          <Route
+            path="/basket"
+            element={<Basket cartItems={cartItems} setCartItems={setCartItems} />}
+          />
+
         </Routes>
       </div>
     </Router>

@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Description from "./Description"; 
 import axios from "axios";
-// import gsap from "gsap";
 
-export default function ProductDetail(onAddToCart) {
+
+
+export default function ProductDetail({onAddToCart}) {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
-      // Add discounted price
+
       const discounted = (res.data.price - res.data.price * 0.3).toFixed(2);
       setProduct({ ...res.data, discountedPrice: discounted });
     });
@@ -21,12 +22,12 @@ export default function ProductDetail(onAddToCart) {
 
   return (
     <div className="max-w-6xl mx-auto p-6 md:p-10">
-      {/* Back link */}
+  
       <Link
         to="/"
         className="text-cyan-700 font-bold hover:underline flex items-center mb-6"
       >
--        ← Back to Products
+        ← Back to Products
       </Link>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -45,7 +46,6 @@ export default function ProductDetail(onAddToCart) {
             {product.title}
           </h1>
 
-          {/* Price with Discount */}
           <div className="flex items-center gap-3 mt-4">
             <span className="text-red-600 text-2xl font-bold">
               ${product.discountedPrice}
@@ -106,7 +106,8 @@ export default function ProductDetail(onAddToCart) {
             </div>
 
             <button 
-                onClick={onAddToCart}
+                
+                      onClick={() => onAddToCart({ ...product, quantity })}
             className="bg-cyan-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 font-bold hover:bg-cyan-700 transition shadow-md">
               🛒 Add to Cart
             </button>
@@ -144,9 +145,7 @@ export default function ProductDetail(onAddToCart) {
           </div>
         </div>
       </div>
-
-      {/* Description */}
-    
+                
       <Description text={product.description} />
 
     </div>
