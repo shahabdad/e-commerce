@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 export  default function ProductCard({product, }) { 
  const navigate = useNavigate();
     return (
- <div className="shadowp-xl   rounded-2xl hover:scale-105 duration-700 group bg-white" 
+ <div className="shadow-xl   rounded-2xl hover:scale-105 duration-700 bg-white" 
    onDoubleClick={() => navigate(`/product/${product.id}`)}
  >    
 
- <div className="flex justify-center items-center">
+ <div className="flex justify-center  items-center">
         <img
-          className="h-[200px] max-w-[200px] object-contain group-hover:scale-90 duration-700"
+          className="h-[150px] max-w-[150px]  hover:scale-105 object-contain group-hover:scale-90 duration-700"
           src={product.image}
           alt={product.title}
         />
@@ -30,12 +30,7 @@ export  default function ProductCard({product, }) {
                       </  div>
 
       </div>
-         <button
-    
-        className="mt-3 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
-      >
-        Add to Cart
-      </button>
+      
 </div>
     )
 }   

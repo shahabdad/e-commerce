@@ -33,9 +33,9 @@ export default function Description({ text }) {
         `}
       </style>
 
-      <h2 className="text-2xl font-bold text-gray-800 mb-4 animate-fadeIn hover-zoom">
+      {/* <h2 className="text-2xl font-bold text-gray-800 mb-4 animate-fadeIn hover-zoom">
         Description
-      </h2>
+      </h2> */}
 
       <p className="text-gray-600 leading-relaxed animate-fadeIn hover-zoom">
         {text}

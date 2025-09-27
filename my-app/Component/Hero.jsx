@@ -4,7 +4,7 @@ import { ShoppingBag } from "lucide-react";
 export default function Hero() {
   return (
     <div
-      className="hero relative min-h-[500px] w-full bg-cover mt-3 bg-center flex items-center"
+      className="hero relative   min-h-[500px] max-h-[700px] w-full bg-cover mt-3 bg-center flex items-center"
       style={{ backgroundImage: "url('/Home-1.jpg')" }}
     >
       {/* Light overlay to make black text visible */}
@@ -27,7 +27,7 @@ export default function Hero() {
           </button>
 
           <button className="group flex items-center gap-2 font-['Lato'] text-white text-base font-bold px-8 py-3 bg-black rounded-lg hover:bg-gray-800 transition duration-500 transform hover:scale-110 hover:-rotate-1 shadow-md hover:shadow-2xl">
-            <ShoppingBag className="w-5 h-5 group-hover:animate-bounce" />
+            <ShoppingBag className="w-5 h-4 group-hover:animate-bounce" />
             Shop Menswear
           </button>
         </div>
