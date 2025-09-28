@@ -103,30 +103,27 @@ export default function ProductDetail({ onAddToCart }) {
             </div>
 
             {/* Add to Cart */}
-            <button
-              onClick={() => {
-                onAddToCart({ ...product, quantity });
-                // navigate("/basket"); // redirect after add
-              }}
-              className="bg-cyan-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 font-bold hover:bg-cyan-700 transition shadow-md"
-            >
-              🛒 Add to Cart
-            </button>
+              <button
+                onClick={() => {
+                    onAddToCart({ ...product, quantity });
+                  // onAddToCart({ ...product, quantity });
+                  navigate("/basket"); // redirect after add
+                }}
+                className="bg-cyan-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 font-bold hover:bg-cyan-700 transition shadow-md"
+              >
+                🛒 Add to Cart
+              </button>
 
             {/* Wishlist */}
-            {/* <button className="bg-red-100 text-red-600 p-3 rounded-lg hover:bg-red-200 transition">
-              // ❤️
-            </button> */}
-             <button className="bg-red-100 text-red-600 p-3 rounded-lg hover:bg-red-200 transition flex items-center gap-2">
-      <Heart className="w-5 h-5" />
-      Like
-    </button>
+            <button className="bg-red-100 text-red-600 p-3 rounded-lg hover:bg-red-200 transition">
+              ❤️
+            </button>
           </div>
 
           {/* Total Price */}
-          {/* <p className="mt-4 text-gray-800 font-semibold"> */}
-            {/* Total: ${(product.discountedPrice * quantity).toFixed(2)} */}
-          {/* </p> */}
+          <p className="mt-4 text-gray-800 font-semibold"> 
+            Total: ${(product.discountedPrice * quantity).toFixed(2)}
+           </p>
 
           {/* Payment Options */}
           <div className="mt-8 flex gap-6 items-center">
